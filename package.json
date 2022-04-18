@@ -1,0 +1,25 @@
+{
+  "name": "react-server-side",
+  "version": "1.0.0",
+  "description": "base for server side react",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --watch src --exec \"npx babel src --keep-file-extension --out-dir build && node build/main.mjs\""
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.9",
+    "@babel/preset-react": "^7.16.7",
+    "nodemon": "^2.0.15"
+  },
+  "babel":{
+    "presets": ["@babel/preset-react"]
+  },
+  "dependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-jss": "^10.9.0"
+  }
+}
