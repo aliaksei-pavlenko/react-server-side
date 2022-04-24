@@ -4,22 +4,34 @@
   "description": "base for server side react",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --watch src --exec \"npx babel src --keep-file-extension --out-dir build && node build/main.mjs\""
+    "dev": "nodemon --watch src --exec \"npx babel src --out-dir build && node build/main.js\" --ext js,jsx,css,json"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.17.6",
     "@babel/core": "^7.17.9",
+    "@babel/plugin-transform-modules-commonjs": "^7.17.9",
     "@babel/preset-react": "^7.16.7",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "postcss": "^8.4.12",
+    "postcss-modules": "^4.3.1"
   },
-  "babel":{
-    "presets": ["@babel/preset-react"]
+  "babel": {
+    "presets": [
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      [
+        "@babel/plugin-transform-modules-commonjs"
+      ],
+      [
+        "./babel-plugin-module-css.js"
+      ]
+    ]
   },
   "dependencies": {
     "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "react-jss": "^10.9.0"
+    "react-dom": "^18.0.0"
   }
 }

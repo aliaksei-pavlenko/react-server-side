@@ -1,0 +1,23 @@
+.redBg {
+    background-color: red;
+}
+
+.redBg > :nth-child(1) {
+    color: lime;
+}
+
+.redBg .whiteColor {
+    color: blue;
+}
+
+.redBg::before{
+    content: 'asd ';
+}
+
+.whiteColor {
+    color: white;
+}
+
+:global .someClassName {
+    color: white;
+}
